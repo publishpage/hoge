@@ -1,0 +1,47 @@
+Option Explicit
+'Microsoft Scripting Runtime参照
+
+Sub test()
+
+    Dim dic As New Dictionary
+    '対応表をセット
+    Call setDic(dic)
+    
+    Dim str1 As String
+    Dim str2 As String
+    Dim str3 As String
+    Dim str4 As String
+    Dim str5 As String
+    Dim str6 As String
+    str1 = "a"
+    str2 = "b"
+    str3 = "c"
+    str4 = "d"
+    str5 = "e"
+    str6 = "f"
+    
+    '対応表にヒットする場合
+    If dic.Exists(str1 & str2) Then
+        Debug.Print dic(str1 & str2)
+    Else
+        Debug.Print "non"
+    End If
+    
+        '対応表にヒットしない場合
+    If dic.Exists(str1 & str3) Then
+        Debug.Print dic(str1 & str3)
+    Else
+        Debug.Print "non"
+    End If
+    
+
+End Sub
+
+Private Sub setDic(dic As Dictionary)
+
+'対応表
+    dic.Add "a" & "b", "kbn1"
+    dic.Add "c" & "d", "kbn2"
+    dic.Add "e" & "f", "kbn3"
+
+End Sub
